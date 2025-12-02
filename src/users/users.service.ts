@@ -1,6 +1,6 @@
 import { ConflictException, Injectable, InternalServerErrorException} from '@nestjs/common';
 import { Prisma, User as UserModel } from '@prisma/client';
-import { PrismaService } from 'src/database/prisma.service';
+import { PrismaService } from '../database/prisma.service';
 import { UserNotFoundException } from './errors/user-not-found';
 import * as bcrypt from 'bcrypt';
 
