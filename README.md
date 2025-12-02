@@ -22,9 +22,9 @@ A robust RESTful API built with **NestJS**, **Prisma**, and **PostgreSQL**. This
     * User Login (returns JWT Access Token).
     * Protected Routes (Guard) using Bearer Token.
 * **User Management (CRUD):**
-    * Create, Read (List/Profile), Update, and Delete users.
+    * Create, Read, Update, and Delete users.
     * **Security:** Passwords are never returned in API responses.
-    * **UUIDs:** Uses UUID v4 for IDs to prevent enumeration attacks.
+    * **UUIDs:** Uses UUID v7 for IDs.
 * **Error Handling:**
     * Global exception handling.
     * Standardized HTTP status codes (404, 409, 401, etc.).
