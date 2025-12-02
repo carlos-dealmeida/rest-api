@@ -1,10 +1,12 @@
-import { Body, Controller, Get, Post, Patch,  Delete, Param, ParseUUIDPipe, HttpStatus, HttpCode } from '@nestjs/common';
+import { Body, Controller, Get, Post, Patch,  Delete, Param, ParseUUIDPipe, HttpStatus, HttpCode, UseGuards } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { User as UserModel} from '@prisma/client';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { JwtAuthGuard } from 'src/auth/jwt/jwt.guard';
 
 @Controller('users')
+@UseGuards(JwtAuthGuard)
 export class UsersController {
   constructor(
     private readonly userService: UsersService,

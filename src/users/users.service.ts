@@ -33,6 +33,10 @@ export class UsersService {
         return result;
     }
 
+    async findByEmail(email: string) {
+        return this.prisma.user.findUnique({ where: { email } });
+    }
+
     async createUser(data: Prisma.UserCreateInput): Promise<Omit<UserModel, 'password'>>{
 
         const salt = await bcrypt.genSalt();
